@@ -5,10 +5,10 @@
     <title>SI-LAB02</title>
 
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="lib/css/Style.css"> <!--utiliza o style do stylesheet do arquivo css-->
+    <link rel="stylesheet" href="lib/css/Style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="lib/angular/angular.js"></script> <!-- importamos o angular.js -->
+    <script src="lib/angular/angular.js"></script>
     <script src="lib/bootstrap/bootstrap.js"></script>
     <script src="lib/jquery/jquery-3.2.1.js">
     </script>
@@ -99,7 +99,7 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <!-- <a class="navbar-brand">NG-WATCH</a> -->
+
       </div>
       <ul class="nav navbar-nav">
         <li class="active" ><a href="#home" data-toggle="tab">SI-LAB02</a></li>
@@ -120,14 +120,14 @@
     <div id="home" class="tab-pane in active">
         <div class="imgContainer">
           <div class="gallery" ng-repeat="serie in series">
-            <img class="serie-poster" src="{{serie.Poster}}" width="200" height="297"> <!--imagem da serie aparecendo-->
+            <img class="serie-poster" src="{{serie.Poster}}" width="200" height="297">
             <div class="middle">
               <div class="text">{{serie.Title}}</div>
               <br>
               <div class="wrapper">
-                <button class="btn btn-primary"  ng-click="addSerieProfile(serie)">+ Profile</button>
+                <button class="btn btn-primary btn-block"  ng-click="addSerieProfile(serie)">+ Profile</button>
                 <br>
-                <button class="btn btn-primary"   ng-click="addSerieWatchlist(serie)">+ WatchList</button>
+                <button class="btn btn-primary btn-block"   ng-click="addSerieWatchlist(serie)">+ WatchList</button>
               </div>
             </div>
           </div>
@@ -138,21 +138,21 @@
     <div id="profile" class="tab-pane in active">
         <div class="imgContainer">
           <div class="gallery" ng-repeat="serie in profile">
-            <img class="serie-poster" src="{{serie.Poster}}" width="200" height="297"> <!--imagem da serie aparecendo-->
+            <img class="serie-poster" src="{{serie.Poster}}" width="200" height="297">
             <div class="middle">
               <div class="text">{{serie.Title}}</div>
+              <br>
               <div class="wrapper">
-                <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#serieInformation{{$index}}">Information</button>
-                <button data-toggle="tooltip" data-placement="top" class="btn btn-primary"  ng-click="removeSerieProfile(serie)">Remove from Profile</button>
+
+                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#serieInformation{{$index}}">Information</button>
+                <br>
+                <button data-toggle="tooltip" data-placement="top" class="btn btn-primary btn-block"  ng-click="removeSerieProfile(serie)">Remove</button>
               </div>
             </div>
 
-            <!-- Modal -->
             <div class="modal fade" id="serieInformation{{$index}}" role="dialog">
               <div class="modal-dialog">
 
-            <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -195,12 +195,14 @@
     <div id= "watchList" class="tab-pane">
           <div class="imgContainer">
             <div class="gallery" ng-repeat="serie in watchList">
-              <img class="serie-poster" src="{{serie.Poster}}" width="200" height="297"> <!--imagem da serie aparecendo-->
+              <img class="serie-poster" src="{{serie.Poster}}" width="200" height="297">
               <div class="middle">
                 <div class="text">{{serie.Title}}</div>
+                <br>
                 <div class="wrapper">
-                  <button class="btn btn-primary"  ng-click="addSerieProfile(serie)">Add  to  Profile</button>
-                  <button class="btn btn-primary"  ng-click="removeSerieWatchList(serie)">Remove from WatchList</button>
+                  <button class="btn btn-primary btn-block"  ng-click="addSerieProfile(serie)">+ Profile</button>
+                  <br>
+                  <button class="btn btn-primary btn-block"  ng-click="removeSerieWatchList(serie)">Remove</button>
                 </div>
               </div>
             </div>
